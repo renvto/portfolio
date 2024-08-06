@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renato</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="slide active-slide" id="home">
+      <h1 id="name" class="fade-in">Renato</h1>
+      <a href="https://github.com/Erroryz/" target="_blank" class="github-link fade-in">
+        <img src="./images/renato.png">
+      </a>
+      <div class="about-me slide-in">
+        <h2>About Me</h2>
+        <p>I'm a bad dev, that's it 😎</p>
+      </div>
+      <div class="discord-container fade-in">
+        <div class="discord-presence">
+          <img src="https://lanyard.cnrad.dev/api/942485584184770630?bg=00000000" alt="Discord Presence">
+        </div>
+      </div>
+    </div>
+
+    <div class="slide" id="projects">
+      <h2>Projects</h2>
+      <p>I don't have any project... 🙂</p>
+    </div>
+
+    <div class="slide" id="socials">
+      <h2>Socials</h2>
+      <div class="social-links">
+        <a href="https://github.com/Erroryz/" target="_blank" class="social-link">
+          <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo">
+        </a>
+        <a href="#" class="social-link" onclick="copyToClipboard('renatooooooooooooo'); return false;">
+          <img src="https://seeklogo.com/images/D/discord-logo-7A1EC3216C-seeklogo.com.png" alt="Discord Logo">
+        </a>
+      </div>
+      <div class="tooltip" id="tooltip">Text copied to clipboard!</div>
+    </div>
+
+    <button class="nav-button" id="prev-button" onclick="navigate(-1)">←</button>
+    <button class="nav-button" id="next-button" onclick="navigate(1)">→</button>
+  </div>
+
+  <div class="footer">
+    <p>Made with ❤ by Renato</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

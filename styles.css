@@ -1,0 +1,253 @@
+body,
+html {
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: #f1f1f1;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.5s ease;
+}
+
+.active-slide {
+    display: flex;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 30px;
+    background: linear-gradient(270deg, #ff00ff, #00f, #ff007f);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: white;
+    animation: revealGradient 2s ease-in-out 1.5s forwards, fadeSlideIn 1s ease-out 0.5s forwards;
+}
+
+.github-link img {
+    width: 70px;
+    height: 70px;
+    margin: 30px 0;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.github-link img:hover {
+    transform: scale(1.1);
+}
+
+.about-me {
+    margin-top: 30px;
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.about-me p {
+    font-size: 1.2rem;
+    line-height: 1.75;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.discord-container {
+    width: 410px;
+    height: 210px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discord-presence img {
+    width: 100%;
+    height: auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer p {
+    color: #3a3a3a;
+    font-size: 1rem;
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #f1f1f1;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.nav-button.show {
+    opacity: 1;
+}
+
+.nav-button.hide {
+    opacity: 0;
+}
+
+#prev-button {
+    left: 10px;
+}
+
+#next-button {
+    right: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeSlideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes revealGradient {
+
+    0%,
+    50% {
+        -webkit-text-fill-color: white;
+    }
+
+    25% {
+        background-position: 0% 50%;
+    }
+
+    50%,
+    100% {
+        -webkit-text-fill-color: transparent;
+    }
+
+    75% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.no-pointer-events {
+    pointer-events: none;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.social-link {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #f1f1f1;
+}
+
+.social-link img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.social-link img:hover {
+    transform: scale(1.1);
+}
+
+
+#socials .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    animation: fadeIn 0.3s forwards;
+}
+
+.tooltip.hide {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeOut 0.3s forwards;
+}
