@@ -101,6 +101,11 @@ h1 {
     text-align: center;
 }
 
+.footer a {
+    color: #3a3a3a; 
+    text-decoration: none;
+}
+
 .footer p {
     color: #3a3a3a;
     font-size: 1rem;
